@@ -1,8 +1,3 @@
-# Spring文件配置
-spring:
-  profiles:
-    active: basic,dev
-
 # 开发环境配置
 server:
   # 服务器的HTTP端口，默认为8080
@@ -20,3 +15,8 @@ server:
       max: 800
       # Tomcat启动初始化的线程数，默认值10
       min-spare: 100
+
+# Spring文件配置
+spring:
+  profiles:
+    active: basic,dev

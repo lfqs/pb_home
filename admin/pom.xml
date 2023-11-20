@@ -12,12 +12,48 @@
     <artifactId>admin</artifactId>
 
     <dependencies>
+
         <!-- 通用类 -->
         <dependency>
             <groupId>com.lfq</groupId>
             <artifactId>common</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
+        <!-- 代码生成类 -->
+        <dependency>
+            <groupId>com.lfq</groupId>
+            <artifactId>mybatisplus</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
+        <!-- 业务服务类 -->
+        <dependency>
+            <groupId>com.lfq</groupId>
+            <artifactId>service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>
