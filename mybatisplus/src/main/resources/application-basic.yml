@@ -18,3 +18,13 @@ pbhome:
   # 是否检查 i18n 资源文件（messages.properties）是否都有对应的键值对
   checkI18nKey: false
   traceRequestIdKey: AG-RequestId
+
+
+# token配置
+token:
+  # 令牌自定义标识
+  header: Authorization
+  # 令牌密钥 TODO 记得更换
+  secret: sdhfkjshBN6rr32df38
+  # 自动刷新token的时间
+  autoRefreshTime: 20

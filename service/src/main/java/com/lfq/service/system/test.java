@@ -1,4 +1,4 @@
-package com.lfqservice.system;
+package com.lfq.service.system;
 
 /**
  * @作者 lfq
