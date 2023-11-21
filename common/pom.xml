@@ -12,6 +12,13 @@
     <packaging>jar</packaging>
 
     <dependencies>
+
+        <!-- SpringBoot Web容器 -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <!--使用undertow依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
