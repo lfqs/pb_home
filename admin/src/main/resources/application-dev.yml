@@ -55,9 +55,9 @@ spring:
           password: root
         # 从库数据源
     #   slave:
-    #   url: jdbc:mysql://localhost:33067/agileboot2?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+    #   url: jdbc:mysql://localhost:3306/pb_home?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
     #   username: root
-    #   password: 12345
+    #   password: root
 
   # redis 配置
   redis:

@@ -20,7 +20,6 @@ public class ResourcesConfig implements WebMvcConfigurer {
         /* 本地文件上传路径 */
         registry.addResourceHandler("/" + Constants.RESOURCE_PREFIX + "/**")
                 .addResourceLocations("file:" + PbHomeConfig.getFileBaseDir() + "/");
-        System.out.println("------------------"+PbHomeConfig.getFileBaseDir());
     }
 
 }

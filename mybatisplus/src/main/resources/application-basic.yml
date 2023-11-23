@@ -28,3 +28,16 @@ token:
   secret: sdhfkjshBN6rr32df38
   # 自动刷新token的时间
   autoRefreshTime: 20
+
+# MyBatis配置
+mybatis-plus:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*Mapper.xml
+  # 加载全局的配置文件
+  configuration:
+    cacheEnabled: true
+    useGeneratedKeys: true
+    defaultExecutorType: SIMPLE
+    logImpl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+  global-config:
+    refresh: true

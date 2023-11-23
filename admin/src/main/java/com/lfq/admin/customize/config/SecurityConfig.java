@@ -95,7 +95,7 @@ public class SecurityConfig {
 
     /**
      * 鉴权管理类
-     * @see UserDetailsServiceImpl#loadUserByUsername
+     * @see
      */
     @Bean
     public AuthenticationManager authManager(HttpSecurity http) throws Exception {

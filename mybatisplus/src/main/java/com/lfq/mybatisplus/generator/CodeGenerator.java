@@ -54,10 +54,9 @@ public class CodeGenerator {
             .username(username)
             .password(password)
             //作者
-
             .author("lfq")
             //生成的类 放在orm子模块下的/target/generated-code目录底下
-            .module("/mybatisplus/src/main/resources")
+            .module("/mybatisplus/target/generator-code")
             .parentPackage("com.lfq")
             .tableName("sys_menu")
             // 决定是否继承基类
