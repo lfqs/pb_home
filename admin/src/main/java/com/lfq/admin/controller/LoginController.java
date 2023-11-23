@@ -1,6 +1,9 @@
 package com.lfq.admin.controller;
 
 import cn.hutool.core.util.StrUtil;
+import com.lfq.admin.customize.domain.vo.ConfigVO;
+import com.lfq.admin.customize.service.login.LoginService;
+import com.lfq.common.core.response.ResponseVO;
 import com.lfq.mybatisplus.config.PbHomeConfig;
 import com.lfq.service.system.user.UserApplicationService;
 import lombok.RequiredArgsConstructor;
@@ -20,13 +23,17 @@ public class LoginController {
 
     private final UserApplicationService userApplicationService;
 
+    private final LoginService loginService;
+
+
+
 
     /**
-     * 测试
+     * 获取验证码 data
      */
     @GetMapping("/getConfig")
-    public boolean test(String username) {
-        System.out.println("1111111111111111111111111111111111111111111");
+    public ResponseVO<ConfigVO> getConfig() {
+        loginService.getClass()
         return userApplicationService.isUserNameDuplicated(username);
     }
 
