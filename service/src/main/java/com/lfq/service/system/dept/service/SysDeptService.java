@@ -1,7 +1,8 @@
 package com.lfq.service.system.dept.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.lfq.mybatisplus.entity.SysDeptEntity;
+import com.lfq.service.system.dept.entity.SysDeptEntity;
+
 
 /**
  * <p>

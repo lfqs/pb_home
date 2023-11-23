@@ -1,9 +1,10 @@
 package com.lfq.service.system.dept.service.impl;
 
+
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.lfq.mybatisplus.entity.SysDeptEntity;
-import com.lfq.mybatisplus.mapper.SysDeptMapper;
-import com.lfq.mybatisplus.service.SysDeptService;
+import com.lfq.service.system.dept.entity.SysDeptEntity;
+import com.lfq.service.system.dept.mapper.SysDeptMapper;
+import com.lfq.service.system.dept.service.SysDeptService;
 import org.springframework.stereotype.Service;
 
 /**

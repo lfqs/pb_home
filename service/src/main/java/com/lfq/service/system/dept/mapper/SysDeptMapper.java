@@ -1,7 +1,7 @@
 package com.lfq.service.system.dept.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.lfq.mybatisplus.entity.SysDeptEntity;
+import com.lfq.service.system.dept.entity.SysDeptEntity;
 
 /**
  * <p>
