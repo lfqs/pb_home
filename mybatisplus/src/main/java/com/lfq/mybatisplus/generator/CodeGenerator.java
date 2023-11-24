@@ -58,7 +58,7 @@ public class CodeGenerator {
             //生成的类 放在orm子模块下的/target/generated-code目录底下
             .module("/mybatisplus/target/generator-code")
             .parentPackage("com.lfq")
-            .tableName("sys_dept")
+            .tableName("sys_notice")
             // 决定是否继承基类
             .isExtendsFromBaseEntity(true)
             .build();

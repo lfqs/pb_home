@@ -1,6 +1,7 @@
 package com.lfq.common.enums.dictionary;
 
 import com.lfq.common.enums.DictionaryEnum;
+import lombok.Data;
 
 /**
  * 字典模型类
@@ -8,6 +9,7 @@ import com.lfq.common.enums.DictionaryEnum;
  * @DATE 2023-11-23
  * current year
  **/
+@Data
 public class DictionaryData {
 
     private String label;

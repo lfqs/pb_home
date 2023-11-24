@@ -1,7 +1,8 @@
 package com.lfq.service.system.config.mapper;
 
-import com.lfq.service.system.config.entity.SysConfigEntity;
+
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.lfq.service.system.config.entity.SysConfigEntity;
 
 /**
  * <p>
