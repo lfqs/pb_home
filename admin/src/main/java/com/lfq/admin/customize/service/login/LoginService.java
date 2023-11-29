@@ -57,6 +57,7 @@ public class LoginService {
         }
         // 用户验证
         Authentication authentication;
+        //密码解密
         String decryptPassword = decryptPassword(loginCommand.getPassword());
         try{
             // 该方法会去调用UserDetailsServiceImpl#loadUserByUsername  校验用户名和密码  认证鉴权
@@ -75,6 +76,7 @@ public class LoginService {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         // 这里获取的loginUser是UserDetailsServiceImpl#loadUserByUsername方法返回的LoginUser
         SystemLoginUser loginUser = (SystemLoginUser) authentication.getPrincipal();
+        //记录登录信息
         recordLoginInfo(loginUser);
         // 生成token
         return tokenService.createTokenAndPutUserInCache(loginUser);
