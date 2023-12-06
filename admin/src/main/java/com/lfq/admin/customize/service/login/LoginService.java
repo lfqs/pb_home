@@ -134,9 +134,7 @@ public class LoginService {
      * @return
      */
     public String decryptPassword(String originalPassword) {
-        byte[] decryptBytes = SecureUtil.rsa(PbHomeConfig.getRsaPrivateKey(), null)
-                .decrypt(Base64.decode(originalPassword), KeyType.PrivateKey);
-
+        byte[] decryptBytes = SecureUtil.rsa(PbHomeConfig.getRsaPrivateKey(), null).decrypt(Base64.decode(originalPassword), KeyType.PrivateKey);
         return StrUtil.str(decryptBytes, CharsetUtil.CHARSET_UTF_8);
     }
 
