@@ -1,5 +1,4 @@
 # 基础公用的配置参数放置在这份yml中
-# 项目相关配置
 pbhome:
   # 名称
   name: pb_home

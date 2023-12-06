@@ -17,7 +17,7 @@ import lombok.Setter;
  * </p>
  *
  * @author lfq
- * @since 2023-11-22
+ * @since 2023-12-06
  */
 @Getter
 @Setter
@@ -35,53 +35,37 @@ public class SysMenuEntity extends BaseEntity<SysMenuEntity> {
     @TableField("menu_name")
     private String menuName;
 
+    @ApiModelProperty("菜单的类型(1为普通菜单2为目录3为内嵌iFrame4为外链跳转)")
+    @TableField("menu_type")
+    private Integer menuType;
+
+    @ApiModelProperty("路由名称（需保持和前端对应的vue文件中的name保持一致defineOptions方法中设置的name）")
+    @TableField("router_name")
+    private String routerName;
+
     @ApiModelProperty("父菜单ID")
     @TableField("parent_id")
     private Long parentId;
 
-    @ApiModelProperty("显示顺序")
-    @TableField("order_num")
-    private Integer orderNum;
-
-    @ApiModelProperty("路由地址")
+    @ApiModelProperty("组件路径（对应前端项目view文件夹中的路径）")
     @TableField("path")
     private String path;
 
-    @ApiModelProperty("组件路径")
-    @TableField("component")
-    private String component;
-
-    @ApiModelProperty("路由参数")
-    @TableField("`query`")
-    private String query;
-
-    @ApiModelProperty("是否为外链（1是 0否）")
-    @TableField("is_external")
-    private Boolean isExternal;
-
-    @ApiModelProperty("是否缓存（1缓存 0不缓存）")
-    @TableField("is_cache")
-    private Boolean isCache;
-
-    @ApiModelProperty("菜单类型（M=1目录 C=2菜单 F=3按钮）")
-    @TableField("menu_type")
-    private Integer menuType;
-
-    @ApiModelProperty("菜单状态（1显示 0隐藏）")
-    @TableField("is_visible")
-    private Boolean isVisible;
-
-    @ApiModelProperty("菜单状态（1启用 0停用）")
-    @TableField("`status`")
-    private Integer status;
+    @ApiModelProperty("是否按钮")
+    @TableField("is_button")
+    private Boolean isButton;
 
     @ApiModelProperty("权限标识")
-    @TableField("perms")
-    private String perms;
+    @TableField("permission")
+    private String permission;
 
-    @ApiModelProperty("菜单图标")
-    @TableField("icon")
-    private String icon;
+    @ApiModelProperty("路由元信息（前端根据这个信息进行逻辑处理）")
+    @TableField("meta_info")
+    private String metaInfo;
+
+    @ApiModelProperty("菜单状态（1启用 0停用）")
+    @TableField("`STATUS`")
+    private Integer status;
 
     @ApiModelProperty("备注")
     @TableField("remark")

@@ -129,7 +129,7 @@ public class LoginService {
     }
 
     /**
-     * 密码加密
+     * 密码解密
      * @param originalPassword
      * @return
      */

@@ -27,4 +27,13 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUserEntity
     }
 
 
+    @Override
+    public SysUserEntity getUserByUserName(String userName) {
+        QueryWrapper<SysUserEntity> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("username", userName);
+        return this.getOne(queryWrapper);
+    }
+
+
+
 }
