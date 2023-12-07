@@ -4,9 +4,12 @@ import cn.hutool.core.util.StrUtil;
 import com.lfq.admin.customize.domain.vo.ConfigVO;
 import com.lfq.admin.customize.domain.vo.LoginVO;
 import com.lfq.admin.customize.service.login.LoginService;
+import com.lfq.common.core.exception.ApiException;
 import com.lfq.common.core.response.ResponseVO;
 import com.lfq.common.security.user.AuthenticationUtils;
 import com.lfq.common.security.user.web.SystemLoginUser;
+import com.lfq.service.system.menu.MenuApplicationService;
+import com.lfq.service.system.menu.dto.RouterDTO;
 import com.lfq.service.vo.CurrentLoginUserDTO;
 import com.lfq.service.vo.TokenDTO;
 import com.lfq.mybatisplus.config.PbHomeConfig;
@@ -16,6 +19,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 /**
  * @作者 lfq
@@ -32,7 +37,7 @@ public class LoginController {
 
     private final LoginService loginService;
 
-
+    private final MenuApplicationService menuApplicationService;
 
 
     /**
@@ -42,7 +47,6 @@ public class LoginController {
     public String index() {
         return StrUtil.format("欢迎使用{}后台管理框架，当前版本：v{}，请通过前端地址访问。", pbHomeConfig.getName(), pbHomeConfig.getVersion());
     }
-
 
 
     /**
@@ -71,13 +75,24 @@ public class LoginController {
     }
 
 
+    /**
+     * 获取路由信息
+     * TODO 如果要在前端开启路由缓存的话 需要在ServerConfig.json 中  设置CachingAsyncRoutes=true  避免一直重复请求路由接口
+     * @return 路由信息
+     */
+    //@Operation(summary = "获取用户对应的菜单路由", description = "用于动态生成路由")
+    @GetMapping("/getRouters")
+    public ResponseVO<List<RouterDTO>> getRouters() {
+        SystemLoginUser loginUser = AuthenticationUtils.getSystemLoginUser();
+        List<RouterDTO> routerTree = menuApplicationService.getRouterTree(loginUser);
+        return ResponseVO.ok(routerTree);
+    }
 
 
-
-
-
-
-
-
+//    @Operation(summary = "注册接口", description = "暂未实现")
+//    @PostMapping("/register")
+//    public ResponseVO<Void> register(@RequestBody AddUserCommand command) {
+//        return ResponseVO.fail(new ApiException(Business.COMMON_UNSUPPORTED_OPERATION));
+//    }
 
 }
